@@ -13,4 +13,20 @@
     <year>2007</year>
     <price>31.99</price>
   </book>
+
+<book2store>
+  <book2 name="hp1">
+    <title lang="en">Harry Potter</title>
+    <author>J K. Rowling</author>
+    <year>2005</year>
+    <price>29.99</price>
+  </book2>
+  <book2 name="hp2">
+    <title lang="en">HaPotter</title>
+    <author>J K. Row</author>
+    <year>2007</year>
+    <price>31.99</price>
+  </book2>
+</book2store>
+
 </bookstore>

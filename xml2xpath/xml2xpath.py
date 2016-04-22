@@ -7,7 +7,7 @@ tree = etree.parse(sys.argv[1])
 
 root = tree.getroot();
 
-def traversexpath(root,prefix):
+def TraverseXML(root,prefix):
     prefix=prefix + "/" + root.tag
     print prefix
     if root.attrib:
@@ -15,6 +15,6 @@ def traversexpath(root,prefix):
             print prefix + "/@" + k ;
             print prefix + "[@" + k + "='" + root.attrib[k] + "']" ;
     for child in root:
-        traversexpath(child,prefix)
+        TraverseXML(child,prefix)
 
-traversexpath(root,"")
+TraverseXML(root,"")
