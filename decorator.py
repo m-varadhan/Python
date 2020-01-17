@@ -51,3 +51,24 @@ print(mycall2("HTML","HTML5"))
 
 print(mycall2.__name__)  # prints 'f'
 print(mycall2.__doc__)   # prints 'does some print'
+
+
+print("==========================")
+
+def getFuncName(f):
+    from functools import wraps
+    @wraps(f)
+    def __get_func_name(*args,**kwargs):
+        f(*args,__name__=f.__name__,**kwargs)
+    return __get_func_name
+    
+
+@getFuncName
+def hello_my_func(x,y,z,key,__name__):
+    print("hello_my_func>>>")
+    print(__name__)
+    print(key)
+    print("{}{}{}".format(x,y,z))
+
+
+hello_my_func(1,2,3,key="key")
