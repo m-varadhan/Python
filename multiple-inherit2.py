@@ -19,8 +19,8 @@ class C:
 class D(C, B):
     def __init__(self):
         print('__init__: D:' + str(id(self)))
-        super().__init__()
-        B.__init__(self)
+        super().__init__() # == super(D,self).__init__() 
+        super(C,self).__init__() #== #B.__init__(self)
         pass
 
     def x(self):

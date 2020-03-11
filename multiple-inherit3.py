@@ -19,7 +19,7 @@ class WordCounter(Tokenizer):
         print('Start init WordCounter.__init__()')
         #super().__init__(text + " wordcounter", WordCounter)
         #super().__init__(text + " wordcounter")
-        super().__init__(len(text)+1)
+        super().__init__(text)
         #super(WordCounter,self).__init__(text + " wordcounter", WordCounter)
         #self.word_count = len(self.tokens)
         print('End init WordCounter.__init__()')
@@ -47,7 +47,9 @@ class TextDescriber(WordCounter, Vocabulary):
 
 
 td = TextDescriber('row row row your boat')
-print(TextDescriber.mro())
+print(TextDescriber.mro()) #super keyword will follow the MRO chain of calling methods
+print(WordCounter.mro())
+print(Vocabulary.mro())
 #print('--------')
 #print(td.tokens)
 #print(td.vocab)
